@@ -17,9 +17,9 @@ export function SplitButton({list,setCurrentCategory}) {
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-  useEffect(() => {
-    handleMenuItemClick(null,0);
-  }, [])
+  // useEffect(() => {
+  //   handleMenuItemClick(null,0);
+  // }, [])
   
   const handleClick = () => {
     console.info(`You clicked ${list[selectedIndex]}`);
@@ -44,7 +44,7 @@ export function SplitButton({list,setCurrentCategory}) {
   };
 
   return (
-    <Grid container direction="column" alignItems="center">
+    <Grid direction="column" alignItems="center">
       <Grid item xs={12}>
         <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
           <Button onClick={handleClick}>{list[selectedIndex]?.title}</Button>

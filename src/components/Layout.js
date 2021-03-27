@@ -13,7 +13,7 @@ const Layout = ({ children, setCurrentCategory }) => {
       </HeaderContainer>
       <MainContainer>
         <Category setCurrentCategory = {setCurrentCategory} />
-        <OptionDialog/>
+        {/* <OptionDialog/> */}
         {children}
       </MainContainer>
 
