@@ -2,7 +2,7 @@ import Layout from "./components/Layout";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
 import Login from "./components/Login";
-import Form from "./components/Form";
+import QuestionForm from "./components/QuestionForm";
 import React, { useState } from "react";
 
 export const CategoryContext = React.createContext("");
@@ -29,7 +29,7 @@ function App() {
           TEST
           <p>Current User: {user.email}</p>
           <p>Current Category: {JSON.stringify(currentCategory).toString()}</p>
-          <Form currentCategory = {currentCategory} />
+          <QuestionForm currentCategory = {currentCategory} />
         </Layout>
     );
   }

@@ -4,7 +4,7 @@ import firebase from "firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 
-function Form({currentCategory}) {
+function QuestionForm({currentCategory}) {
   const [user] = useAuthState(firebase.auth());
   // const [categories] = useCollection(
   //   firebase.firestore().collection("category").where("uid", "==", user.uid)
@@ -96,4 +96,4 @@ function Form({currentCategory}) {
   );
 }
 
-export default Form;
+export default QuestionForm;

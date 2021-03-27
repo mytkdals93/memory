@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Category from "./Category";
+import OptionDialog from "./OptionDialog";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { auth } from "../firebase";
 const Layout = ({ children, setCurrentCategory }) => {
@@ -10,10 +11,12 @@ const Layout = ({ children, setCurrentCategory }) => {
         Header 
         <ExitToAppIcon cursor="pointer" onClick={()=>{auth.signOut()}}/>
       </HeaderContainer>
-      <MainContainer>{children}</MainContainer>
-      <CategoryContainer>
+      <MainContainer>
         <Category setCurrentCategory = {setCurrentCategory} />
-      </CategoryContainer>
+        <OptionDialog/>
+        {children}
+      </MainContainer>
+
       <FooterContainer>Footer</FooterContainer>
     </LayoutContainer>
   );
@@ -25,16 +28,13 @@ const LayoutContainer = styled.div`
   display: Grid;
   grid-template-areas:
     "header header header"
-    "sd main main"
+    "main main main"
     "footer footer footer";
 `;
 const HeaderContainer = styled.header`
   grid-area: header;
   height: 8vh;
   background: orange;
-`;
-const CategoryContainer = styled.aside`
-  grid-area: sd;
 `;
 const MainContainer = styled.main`
   grid-area: main;
