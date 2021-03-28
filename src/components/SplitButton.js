@@ -15,7 +15,7 @@ export function SplitButton({list,setCurrentCategory}) {
 
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(-1);
 
   // useEffect(() => {
   //   handleMenuItemClick(null,0);
@@ -44,10 +44,9 @@ export function SplitButton({list,setCurrentCategory}) {
   };
 
   return (
-    <Grid direction="column" alignItems="center">
-      <Grid item xs={12}>
+      <Grid>
         <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
-          <Button onClick={handleClick}>{list[selectedIndex]?.title}</Button>
+          <Button onClick={handleClick}>{selectedIndex ? list[selectedIndex]?.title : "선택" }</Button>
           <Button
             color="primary"
             size="small"
@@ -87,7 +86,6 @@ export function SplitButton({list,setCurrentCategory}) {
           )}
         </Popper>
       </Grid>
-    </Grid>
   );
 }
 

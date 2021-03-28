@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Category from "./Category";
-import OptionDialog from "./OptionDialog";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { auth } from "../firebase";
-const Layout = ({ children, setCurrentCategory }) => {
+const Layout = ({ children,currentCategory, setCurrentCategory }) => {
   return (
     <LayoutContainer>
       <HeaderContainer>
@@ -13,7 +12,6 @@ const Layout = ({ children, setCurrentCategory }) => {
       </HeaderContainer>
       <MainContainer>
         <Category setCurrentCategory = {setCurrentCategory} />
-        {/* <OptionDialog/> */}
         {children}
       </MainContainer>
 
@@ -25,7 +23,7 @@ const Layout = ({ children, setCurrentCategory }) => {
 export default Layout;
 
 const LayoutContainer = styled.div`
-  display: Grid;
+  display: grid;
   grid-template-areas:
     "header header header"
     "main main main"

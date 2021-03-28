@@ -19,5 +19,5 @@ export default Login
 
 const Container = styled.div`
 min-width:100vw;
-min-hieght:100vh;
+min-height:100vh;
 `

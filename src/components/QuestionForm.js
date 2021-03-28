@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
-import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 
 function QuestionForm({currentCategory}) {
   const [user] = useAuthState(firebase.auth());
-  // const [categories] = useCollection(
-  //   firebase.firestore().collection("category").where("uid", "==", user.uid)
-  // );
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [audioFile, setAudioFile] = useState(null);
