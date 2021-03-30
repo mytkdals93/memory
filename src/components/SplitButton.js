@@ -46,7 +46,7 @@ export function SplitButton({list,setCurrentCategory}) {
   return (
       <Grid>
         <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
-          <Button onClick={handleClick}>{selectedIndex ? list[selectedIndex]?.title : "선택" }</Button>
+          <Button onClick={handleClick}>{selectedIndex !== -1 ? list[selectedIndex]?.title : "선택" }</Button>
           <Button
             color="primary"
             size="small"
